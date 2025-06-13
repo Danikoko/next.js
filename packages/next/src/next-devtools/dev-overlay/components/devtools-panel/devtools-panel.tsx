@@ -13,9 +13,11 @@ import { Cross } from '../../icons/cross'
 export function DevToolsPanel({
   state,
   dispatch,
+  issueCount,
 }: {
   state: OverlayState
   dispatch: OverlayDispatch
+  issueCount: number
 }) {
   const [activeTab, setActiveTab] = useState<'issues' | 'route' | 'settings'>(
     'settings'
@@ -56,7 +58,9 @@ export function DevToolsPanel({
                     onClick={() => setActiveTab('issues')}
                   >
                     Issues
-                    <span data-nextjs-devtools-panel-tab-issues-badge>1</span>
+                    <span data-nextjs-devtools-panel-tab-issues-badge>
+                      {issueCount}
+                    </span>
                   </button>
                   <button
                     data-nextjs-devtools-panel-tab={activeTab === 'route'}
@@ -133,6 +137,8 @@ export const DEVTOOLS_PANEL_STYLES = css`
   }
 
   [data-nextjs-devtools-panel-tab] {
+    display: flex;
+    align-items: center;
     color: var(--color-gray-900);
     border-radius: var(--rounded-md-2);
     padding: 4px 12px;
