@@ -25,6 +25,7 @@ import { DEV_TOOLS_INFO_RENDER_FILES_STYLES } from '../components/overview/segme
 import { FADER_STYLES } from '../components/fader'
 import { RESTART_SERVER_BUTTON_STYLES } from '../components/errors/error-overlay-toolbar/restart-server-button'
 import { NEXT_LOGO_STYLES } from '../components/devtools-indicator/next-logo'
+import { DEVTOOLS_PANEL_STYLES } from '../components/devtools-panel/devtools-panel'
 
 export function ComponentStyles() {
   return (
@@ -56,6 +57,7 @@ export function ComponentStyles() {
         ${DEV_TOOLS_INFO_RENDER_FILES_STYLES}
         ${FADER_STYLES}
         ${NEXT_LOGO_STYLES}
+        ${DEVTOOLS_PANEL_STYLES}
       `}
     </style>
   )
